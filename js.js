@@ -75,7 +75,7 @@ var calculate = (clickObj) => {
         case '-':
             value = startVal;
             startVal = '0';
-            displayValElement.innerText = startVal;
+            displayValElement.innerText = value;
             countStringArray.push(value);
             countStringArray.push('-');
             break;  
@@ -83,7 +83,7 @@ var calculate = (clickObj) => {
         case 'x':
             value = startVal;
             startVal = '0';
-            displayValElement.innerText = startVal;
+            displayValElement.innerText = value;
             countStringArray.push(value);
             countStringArray.push('*');
             break; 
@@ -91,7 +91,7 @@ var calculate = (clickObj) => {
         case '÷':
             value = startVal;
             startVal = '0';
-            displayValElement.innerText = startVal;
+            displayValElement.innerText = value;
             countStringArray.push(value);
             countStringArray.push('/');
             break; 
