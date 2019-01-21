@@ -125,5 +125,6 @@ eqv.onclick = () => {
     if(isNaN(displayValElement.innerText) || !isFinite(displayValElement.innerText)){
      displayValElement.innerText = 'error';
      displayAbove.innerText = ''; 
+     startVal = '0';
     }
 }   
