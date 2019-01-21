@@ -13,11 +13,12 @@
 .display{
     text-align: right;
     background: #212121;
-    height: 85px;
-
+    height: 40px;
+    border: 0px;
+    margin-bottom: -1px; 
     color: #fff;
     font-size: 38px;
-    line-height: 95px;
+    line-height: 40px;
     padding-right: 5px; 
 }
 .btn{

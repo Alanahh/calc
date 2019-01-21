@@ -13,6 +13,8 @@ var clear = document.getElementById('clear');
 
 var point = document.getElementById('point');
 
+var displayAbove = document.getElementById('displayAbove');
+
 var displayValElement = document.getElementById('display');
 var startVal = '0';
 var value;
@@ -30,7 +32,7 @@ var updateDisplayVal = (clickObj) =>{
  if(startVal === '0')
      startVal = '';
      startVal += text;
-        console.log(startVal);
+     console.log(startVal);
      displayValElement.innerText = startVal;
     console.log(displayValElement.innerText)
  
@@ -45,6 +47,7 @@ clear.onclick = () => {
     value = undefined;
     countStringArray = [];
     displayValElement.innerText = startVal;
+    displayAbove.innerText = "";
 }
 
 point.onclick = () => {
@@ -63,140 +66,60 @@ var calculate = (clickObj) => {
         case '+':
             value = startVal;
             startVal = '0';
-            displayValElement.innerText = startVal;
+            displayValElement.innerText = value;
+            console.log(value);
             countStringArray.push(value);
             countStringArray.push('+');
             break;
+
         case '-':
             value = startVal;
             startVal = '0';
             displayValElement.innerText = startVal;
             countStringArray.push(value);
             countStringArray.push('-');
-            break;    
+            break;  
+
         case 'x':
             value = startVal;
             startVal = '0';
             displayValElement.innerText = startVal;
             countStringArray.push(value);
             countStringArray.push('*');
-            break;      
+            break; 
+
         case '÷':
             value = startVal;
             startVal = '0';
             displayValElement.innerText = startVal;
             countStringArray.push(value);
             countStringArray.push('/');
-            
             break; 
+
         case '=':
             countStringArray.push(startVal);
+            displayAbove.innerHTML = countStringArray.join(' ') + "=";
             var evaluate = eval(countStringArray.join(' '));   
             startVal = evaluate + '';
             countStringArray.push("=");
             countStringArray.push(startVal);
-            // displayValElement.innerHTML = countStringArray.join("");
-            displayValElement.innerHTML = startVal;
 
-            
+            displayValElement.innerHTML = startVal;
+          
             countStringArray = [];
-            break;    
+            break;  
+
         default:
-            break;         
+            break; 
+
     }
 }
+
 for(let j = 0; j < operators.length; j++){
     operators[j].addEventListener('click', calculate, false);
 }
+
 eqv.onclick = () => {
     if(displayValElement.innerHTML == "Infinity")
-    // alert('find')
-    // console.log(displayValElement.innerHTML)
     displayValElement.innerText = "Error";
 }
-// equals.onclick = () =>{
-//     console.log(startVal);
-//     console.log(!displayValElement.innerText.includes('.'))
-// }
-// for(let i = 0; i < operators.length; i++){
-//     operators[i].addEventListener('click', count, false);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function Calculator() {
-
-//     this.getNums = function(){
-
-//         this.a = +prompt("Print in first num please", 0);
-//         this.b = +prompt("Print in second num please", 0);
-
-//     };
-
-//     this.sum = function(){
-//         return this.a + this.b;
-//     };
-
-//     this.min = function(){
-//         return this.a - this.b;
-//     };
-
-//     this.mul = function(){
-//         return this.a * this.b;
-//     };
-
-//     this.div = function(){
-//         if(this.b!==0){
-//             return this.a / this.b;
-//         }else{
-//             alert("Делить на ноль нельзя")
-//         }
-//     };
-    
-// }
-
-
-// var calc = new Calculator();
-// calc.getNums();
-
-// console.log(calc.sum());
-// console.log(calc.mul());
-// console.log(calc.div());
-
-
