@@ -44,7 +44,8 @@
 }
 .row{
     display: table;
-    width: 200px;
+    width: 250px;
+    max-width: 250px;
 }
 .operator{
     background: #f99212;

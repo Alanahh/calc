@@ -120,6 +120,8 @@ for(let j = 0; j < operators.length; j++){
 }
 
 eqv.onclick = () => {
-    if(displayValElement.innerHTML == "Infinity")
+    if(displayValElement.innerHTML == "Infinity" || displayValElement.innerHTML == "-Infinity"){
     displayValElement.innerText = "Error";
-}
+     displayAbove.innerText = "";
+    }
+}   
