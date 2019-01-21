@@ -1,14 +1,3 @@
-var one = document.getElementById('one');
-var two = document.getElementById('two');
-var tree = document.getElementById('tree');
-var four = document.getElementById('four');
-var five = document.getElementById('five');
-var six = document.getElementById('six');
-var seven = document.getElementById('seven');
-var eight = document.getElementById('eight');
-var nine = document.getElementById('nine');
-var zero = document.getElementById('zero');
-
 var clear = document.getElementById('clear');
 
 var point = document.getElementById('point');
