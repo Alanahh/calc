@@ -122,8 +122,8 @@ for(let j = 0; j < operators.length; j++){
 eqv.onclick = () => {
     console.log(displayValElement.innerText);
     console.log(!isFinite(displayValElement.innerText));
-    if(isNaN(displayValElement.innerText) || !isFinite(displayValElement.innerText))
+    if(isNaN(displayValElement.innerText) || !isFinite(displayValElement.innerText)){
      displayValElement.innerText = 'error';
-    
-    
+     displayAbove.innerText = ''; 
+    }
 }   
