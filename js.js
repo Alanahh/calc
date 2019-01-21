@@ -98,7 +98,7 @@ var calculate = (clickObj) => {
 
         case '=':
             countStringArray.push(startVal);
-            displayAbove.innerHTML = countStringArray.join(' ') + "=";
+            displayAbove.innerHTML = countStringArray.join(' ') +""+ "=";
             var evaluate = eval(countStringArray.join(' '));   
             startVal = evaluate + '';
             countStringArray.push("=");
@@ -120,8 +120,10 @@ for(let j = 0; j < operators.length; j++){
 }
 
 eqv.onclick = () => {
-    if(displayValElement.innerHTML == "Infinity" || displayValElement.innerHTML == "-Infinity"){
-    displayValElement.innerText = "Error";
-     displayAbove.innerText = "";
-    }
+    console.log(displayValElement.innerText);
+    console.log(!isFinite(displayValElement.innerText));
+    if(isNaN(displayValElement.innerText) || !isFinite(displayValElement.innerText))
+     displayValElement.innerText = 'error';
+    
+    
 }   
